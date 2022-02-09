@@ -3,11 +3,11 @@ const db = require('./config/db')
 const cors = require('cors')
 
 const app = express();
-const PORT = 3000;
+const port = process.env.port || 3000;
 app.use(cors());
 app.use(express.json())
 
-app.listen(3000, () => console.log('Server running at port 3000'));
+app.listen(port, () => console.log('Server running at port ' + port));
 
 //demo home page, ensures we have access to the server
 app.get('/', function (req, res) {
